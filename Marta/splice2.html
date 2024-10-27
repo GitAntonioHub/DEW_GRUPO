@@ -2,21 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Concat</title>
-    <link rel="stylesheet" href="../css/styles.css">
-
-    <body>
-        <button onclick="window.location.href='../index.html'">Volver</button>
-
+    <title>splice</title>
     <script type="text/javascript">
         const star = ["Polaris", "Deneb", "Vega", "Altair"];
-        const nuevastar = ["Aldebaran", "Rigel"];
-        const todasstar = [...star, ...nuevastar]; // Spread operator
+        const removedElements = star.splice(2, 3);   // Eliminar a partir del índice 2, hasta 3 elementos
+        alert(removedElements);                      // Muestra ["Vega", "Altair"]
+        alert(star.join());                          // Muestra "Polaris,Deneb"
 
-        todasstar.forEach(estrella => alert(estrella)); // Arrow function y forEach
-    </script></body>
+        // Copia del array original
+        const originalStar = ["Polaris", "Deneb", "Vega", "Altair"];
+        const starCopy = [...originalStar];          // Usamos el operador de propagación para copiar
+        const newRemovedElements = star.splice(2, 3);
+        alert(newRemovedElements);                   // Muestra ["Vega", "Altair"]
+        alert(star.join());                          // Muestra "Polaris,Deneb"
+        alert(starCopy.join());                      // Muestra la copia sin modificaciones: "Polaris,Deneb,Vega,Altair"
+    </script>
 </head>
 <body>
-    <p>Ejemplo Slice</p>
+    <p>Chapter 8 Example</p>
 </body>
 </html>
