@@ -5,20 +5,24 @@
     <title>splice</title>
     <script type="text/javascript">
         const star = ["Polaris", "Deneb", "Vega", "Altair"];
-        const removedElements = star.splice(2, 3);   // Eliminar a partir del índice 2, hasta 3 elementos
-        alert(removedElements);                      // Muestra ["Vega", "Altair"]
-        alert(star.join());                          // Muestra "Polaris,Deneb"
+        
+        // Hacemos una copia para realizar la primera operación
+        const firstCopy = [...star];
+        const removedElements = firstCopy.splice(2, 2);   // Elimina "Vega" y "Altair"
+        alert(removedElements);                           // Muestra ["Vega", "Altair"]
+        alert(firstCopy.join());                          // Muestra "Polaris,Deneb"
 
-        // Copia del array original
-        const originalStar = ["Polaris", "Deneb", "Vega", "Altair"];
-        const starCopy = [...originalStar];          // Usamos el operador de propagación para copiar
-        const newRemovedElements = star.splice(2, 3);
-        alert(newRemovedElements);                   // Muestra ["Vega", "Altair"]
-        alert(star.join());                          // Muestra "Polaris,Deneb"
-        alert(starCopy.join());                      // Muestra la copia sin modificaciones: "Polaris,Deneb,Vega,Altair"
+        // Hacemos otra copia para la segunda operación
+        const secondCopy = [...star];
+        const newRemovedElements = secondCopy.splice(2, 2); // Elimina "Vega" y "Altair" en la segunda copia
+        alert(newRemovedElements);                         // Muestra ["Vega", "Altair"]
+        alert(secondCopy.join());                          // Muestra "Polaris,Deneb"
+
+        // Mostramos el array original completo sin cambios
+        alert(star.join());  // Muestra "Polaris,Deneb,Vega,Altair"
     </script>
 </head>
 <body>
-    <p>Chapter 8 Example</p>
+    <p>Ejemplo Splice Mejorado</p>
 </body>
 </html>
