@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Visual de unshift() y shift()</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <button onclick="window.location.href='../index.html'">Volver</button>
+    <h1>Unshift y Shift</h1>
+    <div class="container"><div id="arrayDisplay">Array: ['manzana', 'plátano', 'naranja']</div>
+    <button onclick="agregarFruta()">Agregar Kiwi al Inicio</button>
+    <button onclick="quitarFruta()">Quitar Primera Fruta</button>
+    <div id="resultado"></div></div>
+    <br>
+    <script>
+        let frutas = ['manzana', 'plátano', 'naranja'];
+
+        function actualizarDisplay() {
+            document.getElementById('arrayDisplay').innerText = `Array: [${frutas.join(', ')}]`;
+        }
+
+        function agregarFruta() {
+            frutas.unshift('kiwi'); // Agrega 'kiwi' al inicio del array
+            actualizarDisplay();
+            document.getElementById('resultado').innerText = `Se agregó 'kiwi' al inicio.`;
+        }
+
+        function quitarFruta() {
+            if (frutas.length > 0) {
+                let frutaEliminada = frutas.shift(); // Elimina el primer elemento del array
+                actualizarDisplay();
+                document.getElementById('resultado').innerText = `Se quitó '${frutaEliminada}' del inicio.`;
+            } else {
+                document.getElementById('resultado').innerText = `No hay frutas para quitar.`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Visual de join()</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <button onclick="window.location.href='../index.html'">Volver</button>
+    <h1>Join</h1>
+    <div class="container">
+        <div id="arrayDisplay">Array: ['manzana', 'plátano', 'naranja']</div>
+        <button onclick="unirArray()">Unir Array</button>
+        <div id="resultado"></div>
+    </div>
+    <br>
+
+    <script>
+        let frutas = ['manzana', 'plátano', 'naranja'];
+
+        function unirArray() {
+            let resultado = frutas.join(', '); // Une los elementos del array con una coma y un espacio
+            document.getElementById('resultado').innerText = `Resultado de join(): ${resultado}`;
+        }
+    </script>
+</body>
+</html>
