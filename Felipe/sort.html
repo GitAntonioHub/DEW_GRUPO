@@ -8,7 +8,37 @@
 </head>
 <body>
     <button onclick="window.location.href='../index.html'">Volver</button>
-    
-    
+    <p style="font-weight: bold;">Ordenamos colores alfabéticamente:</p>
+    <p id="demo1"></p>
+    <p style="font-weight: bold;">Después de reverse():</p>
+    <p id="demo2"></p>
+    <p style="font-weight: bold;">Para ordenar objetos por antigüedad:</p>
+    <p id="demo3"></p>
+<script>
+    const colours = ["Red", "Yellow", "Orange", "Blue", "Black"];
+    colours.sort();
+    document.getElementById("demo1").innerHTML = colours;
+    colours.reverse();
+    document.getElementById("demo2").innerHTML = colours;
+
+    const cpu = [
+    {type:"Raptor Lake", year:2024},
+    {type:"Alder Lake", year:2021},
+    {type:"Coffee Lake", year:2017},
+    {type:"Celeron", year:2015}
+    ];
+
+    displayCPU();
+    cpu.sort(function(a, b){return a.year - b.year});
+    displayCPU();
+
+    function displayCPU() {
+    document.getElementById("demo3").innerHTML =
+    cpu[0].type + " " + cpu[0].year + "<br>" +
+    cpu[1].type + " " + cpu[1].year + "<br>" +
+    cpu[2].type + " " + cpu[2].year + "<br>" +
+    cpu[3].type + " " + cpu[3].year;
+    }
+</script>
 </body>
 </html>
