@@ -1,0 +1,142 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 95%);
+    margin: 0;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container
+{
+    width: 500px;
+    margin: 0 auto;
+    padding: 70px;
+}
+
+h1
+{
+    text-align: center;
+    background-color: #ccc;
+}
+
+h2
+{
+    text-align: center;
+    color: #686666;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0;
+}
+
+li
+{
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+a
+{
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover
+{
+    color: #007BFF;
+}
+
+
+button
+{
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #64b5f6; /* Color pastel azul */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover
+{
+    background-color: #42a5f5; /* Color pastel azul más oscuro */
+}
+
+#aniadir
+{
+    padding: 10px 20px;
+    margin-left: 5px;
+}
+
+#eliminar
+{
+    padding: 10px 20px;
+    margin-left: 116px;
+}
+
+.container
+{
+    top: 50%; /* Mueve el contenedor al 50% de la altura */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    background-color: #ffe0b2; /* Color pastel naranja */
+}
+
+.show
+{
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.result
+{
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#arrayDisplay
+{
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+label
+{
+    display: block;
+    margin-bottom: 10px;
+}
+  
+input[type="text"]
+{
+    width: 90%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
