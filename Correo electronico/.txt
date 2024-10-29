@@ -10,26 +10,26 @@ Para hacer una longitud de 12 y 13 caracteres, las primeras letras (3 y 4) perte
 Del donde se obtienen los valores no nos interesa, solo debemos validar el formato o estructura, si quisieran validar los valores obtenidos tendrían que pedir el nombre completo así como la fecha de nacimiento o creación, lo que se vuelve mas tedioso, por eso en este caso solo validaremos la estructura.
 
 
-
 Método para validar el formato de una dirección de correo electrónico:
 
 private bool Validador(String direccion)
+{
+    String expresion;
+    expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+    
+    if (Regex.IsMatch(direccion, expresion))
+    {
+        if (Regex.Replace(direccion, expresion, String.Empty).Length == 0)
         {
-            String expresion;
-            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(direccion, expresion))
-            {
-                if (Regex.Replace(direccion, expresion, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
+        else
+        {
+            return false;
+        }
+    }
+    else
+    {
+        return false;
+    }
+}

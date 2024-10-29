@@ -8,12 +8,16 @@
     <script>
         function validarCorreo()
         {
-            var correo = document.getElementById("correo").value;
-            var expresion = /\w+@\w+\.+[a-z]/;
+            let correo = document.getElementById("correo").value;
+            let expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            // let expresion = /\w+@\w+\.+[a-z]/; 
 
-            if(expresion.test(correo)){
+            if(expresion.test(correo))
+            {
                 alert("Correo válido");
-            }else{
+            }
+            else
+            {
                 alert("Correo inválido");
             }
         }
