@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Email</title>
+    <script>
+        function validar_email(email) {
+            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return regex.test(email);
+        }
+
+        function validarFormulario() {
+            const email = document.getElementById("email_contacto").value;
+
+            if (validar_email(email)) {
+                alert("El email es correcto");
+                return true;
+            } else {
+                alert("El email NO es correcto");
+                return false;
+            }
+        }
+        
+       
+    </script>
+</head>
+<body>
+    <h2>Formulario de contacto</h2>
+    <form onsubmit="return validarFormulario()">
+        <label for="email_contacto">Email:</label>
+        <input type="email" name="email_contacto" id="email_contacto" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    
+</body>
+</html>

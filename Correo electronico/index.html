@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validación</title>
-
-    <script>
-        function validarCorreo()
-        {
-            let correo = document.getElementById("correo").value;
-            let expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            // let expresion = /\w+@\w+\.+[a-z]/; 
-
-            if(expresion.test(correo))
-            {
-                alert("Correo válido");
-            }
-            else
-            {
-                alert("Correo inválido");
-            }
-        }
-    </script>
-
+    <title>Página de Definición y Enlaces</title>
+    <link rel="stylesheet" href="Styles.css">
 </head>
 <body>
-    <h1>Validación de un correo electrónico.</h1>
-    <input type="text" id="correo" placeholder="Ingrese su correo">
-    <button onclick="validarCorreo()">Validar</button>
+
+    <h1>Actividad Expresiones Regulares</h1>
+
+    <!-- Sección de definición -->
+    <section class="definicion">
+        <h2>Definición de correo electrónico válido</h2>
+        <p>Un correo electrónico válido es una dirección que cumple con ciertos requisitos de formato y existencia para ser reconocida en Internet:</p>
+
+        <p><strong>Formato estándar:</strong> El correo debe tener el formato <code>usuario@dominio.extensión</code>, donde:</p>
+
+        <ul>
+            <li><strong>Usuario:</strong> Puede incluir letras, números y ciertos caracteres especiales.</li>
+            <li><strong>Dominio:</strong> Identifica el proveedor de correo (como gmail o hotmail).</li>
+            <li><strong>Extensión:</strong> Indica el tipo de dominio (.com, .net) o un código de país (.es).</li>
+        </ul>
+
+        <p><strong>Existencia del dominio:</strong> El dominio debe existir y estar configurado con registros MX para recibir correos.</p>
+
+        <p><strong>Disponibilidad de la dirección:</strong> La cuenta de usuario en el dominio debe existir para poder recibir mensajes.</p>
+
+        <p><strong>No estar bloqueada:</strong> La dirección no debe estar suspendida o restringida.</p>
+
+        <p>Para validar el formato básico, se puede utilizar una expresión regular que verifique los componentes de un correo electrónico:</p>
+
+        <ul>
+            <li><strong>Parte local:</strong> Letras, números, puntos, guiones y guiones bajos.</li>
+            <li><strong>@:</strong> Carácter obligatorio.</li>
+            <li><strong>Dominio:</strong> Comienza con letras o números y puede incluir guiones.</li>
+            <li><strong>Extensión:</strong> De 2 a 6 caracteres alfabéticos (ejemplo: .com, .es).</li>
+        </ul>
+
+        <p>Esta verificación solo valida el formato, no garantiza que el correo exista o sea entregable.</p>
+    </section>
+
+    <!-- Sección de enlaces -->
+    <section class="enlaces">
+        <a href="Marta/index.html" target="_blank">Marta</a>
+        <a href="Miguel Ángel/index.html" target="_blank">Miguel Ángel</a>
+        <a href="Felipe/" target="_blank">Felipe</a>
+        <a href="Antonio/" target="_blank">Antonio</a>
+    </section>
+
 </body>
 </html>
