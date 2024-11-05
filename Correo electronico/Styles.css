@@ -55,6 +55,7 @@ a, .enlaces a {
     font-weight: bold;
     text-align: center;
     transition: background-color 0.3s;
+    margin-top: 5%;
 }
 
 .enlaces a:hover {
