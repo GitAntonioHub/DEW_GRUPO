@@ -6,14 +6,12 @@
     <title>Validación</title>
     <link rel="stylesheet" href="../Styles.css">
 
-
     <script>
         function validarCorreo()
         {
             let correo = document.getElementById("correo").value;
-            let expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            // let expresion = /\w+@\w+\.+[a-z]/;
-
+            // let expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"; Formato que admite una o más minúsculas | Signos como '+', '-','.' y " ' " | Letras minúsculas | @ | Letras minúsculas | '-' y '.' | Letras minúsculas | ETC
+            let expresion = "\\w+([-+.'']\\w+)*@\\w+([-+.'']\\w+)*\\.\\w+";
             if(expresion.test(correo))
             {
                 alert("Correo válido");

@@ -1,16 +1,4 @@
-Enlace 2:
-
-El RFC se divide en 2, personas fisicas y morales, la diferencia:
-
-Morales: Se compone de 3 letras seguidas por 6 dígitos y 3 caracteres alfanumericos
-Físicas: consta de 4 letras seguida por 6 dígitos y 3 caracteres alfanumericos
-
-Para hacer una longitud de 12 y 13 caracteres, las primeras letras (3 y 4) pertenecen al nombre, los siguientes 6 dígitos son la fecha de nacimiento o fecha de creación para las morales, y los últimos 3 perteneces a la suma de valores pertenecientes al nombre.
-
-Del donde se obtienen los valores no nos interesa, solo debemos validar el formato o estructura, si quisieran validar los valores obtenidos tendrían que pedir el nombre completo así como la fecha de nacimiento o creación, lo que se vuelve mas tedioso, por eso en este caso solo validaremos la estructura.
-
-
-Método para validar el formato de una dirección de correo electrónico:
+Método para validar el formato de una dirección de correo electrónico según el segundo enlace:
 
 private bool Validador(String direccion)
 {
