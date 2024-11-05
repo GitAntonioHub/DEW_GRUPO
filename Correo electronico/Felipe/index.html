@@ -6,20 +6,28 @@
     <link rel="stylesheet" href="../Styles.css">
     <title>Validación Email JavaScript</title>
     <script>
-        function validarEmail (mail) {
-            if (/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3,4})+$/.test(mail)){
-            alert("La dirección de email " + mail + " es correcta.");
-            } else {
+        function validarEmail(mail) {
+        if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/.test(mail)) {
+            alert("La dirección de email " + '"' + mail + '"' + " es correcta.");
+        } else {
             alert("La dirección de email es incorrecta.");
-            }
         }
+    }
     </script>
 </head>
+<style>
+    body {
+        background-image: url(https://images6.alphacoders.com/122/1223901.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+</style>
 <body>
-    <h1>Validación Email JavaScript</h1>
+    <h1 style="color: rgb(134, 166, 255);">Validación Email JavaScript</h1>
     <form>
         <input type="text" id="correo" placeholder="Ingresar un correo electrónico" required>
-        <button onclick="validarEmail()">Validar</button>
+        <button onclick="validarEmail(document.getElementById('correo').value)">Validar</button>
     </form>
 
     <a href="../index.html">Atrás</a>
