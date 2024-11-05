@@ -10,9 +10,11 @@
         function validarCorreo()
         {
             let correo = document.getElementById("correo").value;
-            // let expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"; Formato que admite una o más minúsculas | Signos como '+', '-','.' y " ' " | Letras minúsculas | @ | Letras minúsculas | '-' y '.' | Letras minúsculas | ETC
-            let expresion = "\\w+([-+.'']\\w+)*@\\w+([-+.'']\\w+)*\\.\\w+";
-            if(expresion.test(correo))
+            
+            // Original ==> "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"; Formato = (Minúsculas | signo | letras)* @ | (Minúsculas | signo | letras)* | Punto | (Minúsculas | signo | letras)*
+            let regex = /^[\w\d+.-]+@[\w\d.-]+\.[\w+]/; // No requiere del dólar al final
+
+            if(regex.test(correo))
             {
                 alert("Correo válido");
             }
