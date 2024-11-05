@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles.css">
+    <title>Validación Email JavaScript</title>
+    <script>
+        function validarEmail (mail) {
+            if (/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3,4})+$/.test(mail)){
+            alert("La dirección de email " + mail + " es correcta.");
+            } else {
+            alert("La dirección de email es incorrecta.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Validación Email JavaScript</h1>
+    <form>
+        <input type="text" id="correo" placeholder="Ingresar un correo electrónico" required>
+        <button onclick="validarEmail()">Validar</button>
+    </form>
+
+    <a href="../index.html">Atrás</a>
+</body>
+</html>
