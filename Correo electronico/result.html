@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado de validación</title>
+    <title>Validación de Email y Envío</title>
     <link rel="stylesheet" href="Styles.css">
+    <script>
+        function validar_email(email) {
+            var regex = /\w+@\w+\.+[a-z]/; 
+            return regex.test(email);
+        }
+
+        function validarFormulario() {
+            const email = document.getElementById("email_contacto").value;
+
+            if (validar_email(email)) {
+                alert("El email es correcto");
+                return true;
+            } else {
+                alert("El email NO es correcto");
+                return false;
+            }
+        }
+
+        function enviarCorreo() {
+            const email = document.getElementById("email_contacto").value;
+
+            if (validar_email(email)) {
+                const asunto = "Consulta desde el formulario";
+                const cuerpo = "Hola, me gustaría recibir información.";
+                window.location.href = `mailto:${email}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(buerpo)}`;
+            } else {
+                alert("El email NO es correcto. Por favor, revisa la dirección antes de enviar.");
+            }
+        }
+    </script>
 </head>
 <body>
-    <a href="index.html">Atrás</a>
+    <h2>Formulario de contacto</h2>
+    <form onsubmit="return validarFormulario()">
+        <label for="email_contacto">Email:</label>
+        <input type="email" name="email_contacto" id="email_contacto" required>
+        <button type="submit">Validar</button>
+    </form>
 </body>
 </html>
