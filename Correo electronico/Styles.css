@@ -39,14 +39,14 @@ section {
     margin-bottom: 5px;
 }
 
-.enlaces {
+a, .enlaces {
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: center;
 }
 
-.enlaces a {
+a, .enlaces a {
     text-decoration: none;
     color: #fff;
     background-color: #1a73e8;
