@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validación</title>
+    <link rel="stylesheet" href="../Styles.css">
+
 
     <script>
         function validarCorreo()
@@ -26,7 +28,12 @@
 </head>
 <body>
     <h1>Validación de un correo electrónico.</h1>
-    <input type="text" id="correo" placeholder="Ingrese su correo">
-    <button onclick="validarCorreo()">Validar</button>
+    <form>
+        <input type="text" id="correo" placeholder="Ingrese su correo" required>
+        <button onclick="validarCorreo()">Validar</button>
+    </form>
+
+    <a href="../index.html">Atrás</a>
+
 </body>
 </html>

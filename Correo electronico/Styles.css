@@ -61,3 +61,25 @@ a, .enlaces a {
 .enlaces a:hover {
     background-color: #155bb5;
 }
+
+form
+{
+    display: flex;
+    flex-direction: row;
+}
+
+form>label
+{
+    margin-right: 10px;
+}
+
+form>input
+{
+    width: 600px;
+    margin-right: 10px;
+}
+
+#correo
+{
+    width: 535px;
+}
