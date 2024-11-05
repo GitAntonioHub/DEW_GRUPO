@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado de validación</title>
     <link rel="stylesheet" href="Styles.css">
+
+    <script>
+        function validarCorreo()
+        {
+            let correo = document.getElementById("correo").value;
+            let expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            // let expresion = /\w+@\w+\.+[a-z]/;
+
+            if(expresion.test(correo))
+            {
+                alert("Correo válido");
+            }
+            else
+            {
+                alert("Correo inválido");
+            }
+        }
+    </script>
 </head>
 <body>
     <a href="index.html">Atrás</a>
