@@ -11,32 +11,24 @@
     <!-- Sección de definición -->
     <section class="definicion">
         <h2>Definición de correo electrónico válido</h2>
-        <p>Un correo electrónico válido es una dirección que cumple con ciertos requisitos de formato y existencia para ser reconocida en Internet:</p>
+        <p>Un correo electrónico válido es una dirección que cumple con un formato estándar para poder enviar y recibir mensajes a través de servicios de correo electrónico. Generalmente, un correo electrónico válido tiene las siguientes características:</p>
 
-        <p><strong>Formato estándar:</strong> El correo debe tener el formato <code>usuario@dominio.extensión</code>, donde:</p>
+        Estructura básica: sigue el formato nombreusuario@dominio.ext, donde:
 
-        <ul>
-            <li><strong>Usuario:</strong> Puede incluir letras, números y ciertos caracteres especiales.</li>
-            <li><strong>Dominio:</strong> Identifica el proveedor de correo (como gmail o hotmail).</li>
-            <li><strong>Extensión:</strong> Indica el tipo de dominio (.com, .net) o un código de país (.es).</li>
-        </ul>
+        nombreusuario: puede contener letras, números, puntos, guiones y guiones bajos.
+        dominio: debe ser un nombre de dominio válido (ejemplo: gmail, outlook).
+        extensión: es el tipo de dominio, como .com, .net, .org, etc.
+        Sin espacios: no debe tener espacios en blanco.
 
-        <p><strong>Existencia del dominio:</strong> El dominio debe existir y estar configurado con registros MX para recibir correos.</p>
+        Longitud adecuada: algunos servicios de correo limitan el número de caracteres, por lo general a 254 caracteres.
 
-        <p><strong>Disponibilidad de la dirección:</strong> La cuenta de usuario en el dominio debe existir para poder recibir mensajes.</p>
+        Símbolos prohibidos: no puede contener caracteres especiales como (),:;<>[\] ni otros que no sean @, . y guiones (- y _ en el nombre de usuario).
 
-        <p><strong>No estar bloqueada:</strong> La dirección no debe estar suspendida o restringida.</p>
+        Solo una @: la dirección debe tener una sola arroba para ser válida.
 
-        <p>Para validar el formato básico, se puede utilizar una expresión regular que verifique los componentes de un correo electrónico:</p>
+        Dominio válido: el dominio debe existir en internet para que los correos puedan llegar correctamente.
 
-        <ul>
-            <li><strong>Parte local:</strong> Letras, números, puntos, guiones y guiones bajos.</li>
-            <li><strong>@:</strong> Carácter obligatorio.</li>
-            <li><strong>Dominio:</strong> Comienza con letras o números y puede incluir guiones.</li>
-            <li><strong>Extensión:</strong> De 2 a 6 caracteres alfabéticos (ejemplo: .com, .es).</li>
-        </ul>
-
-        <p>Esta verificación solo valida el formato, no garantiza que el correo exista o sea entregable.</p>
+        Con estas reglas, una dirección como ejemplo@dominio.com sería válida, mientras que algo como ejemplo@dominio@com o ejemplo@dominio no lo sería.
     </section>
 
     <!-- Sección de enlaces -->
