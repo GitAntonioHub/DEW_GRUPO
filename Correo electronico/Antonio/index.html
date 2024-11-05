@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="../Styles.css">
     <title>Validación de Email con Caracteres Latinos</title>
     <script>
-        function validarCorreoLatino(correo) {
+        function validarCorreoLatino(correo)
+        {
             // Expresión regular para validar correos con caracteres latinos y especiales
             let regex = /^[-\w.%+áéíóúÁÉÍÓÚñÑçÇ]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,63}$/i;
             return regex.test(correo);
@@ -28,9 +29,11 @@
 </head>
 <body>
     <h1>Validación de Correo Electrónico con Caracteres Latinos</h1>
-    <input type="text" id="email" placeholder="Ingrese su correo">
-    <button onclick="validarFormulario()">Validar</button>
-    <p id="resultado"></p>
+    <form>
+        <input type="text" id="email" placeholder="Ingrese su correo">
+        <button onclick="validarFormulario()">Validar</button>
+        <p id="resultado"></p>
+    </form>
     <a href="../index.html">Atrás</a>
 </body>
 </html>
