@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../Styles.css">
     <title>Validación de Email con Caracteres Latinos</title>
     <script>
-        function validarCorreoLatino(correo)
+        /*function validarCorreoLatino(correo)
         {
             // Expresión regular para validar correos con caracteres latinos y especiales
             let regex = /^[-\w.%+áéíóúÁÉÍÓÚñÑçÇ]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,63}$/i;
@@ -24,13 +24,29 @@
                 mensaje.innerText = "Correo no válido";
                 mensaje.style.color = "red";
             }
-        }
+        }*/
+
+        document.getElementById('email').addEventListener('input', function() {
+            campo = event.target;
+            valido = document.getElementById('emailOK');
+        
+            emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+            if (emailRegex.test(campo.value)) {
+                valido.innerText = "válido";
+            } else {
+                valido.innerText = "incorrecto";
+            }
+        });
     </script>
 </head>
 <body>
     <h1>Validación de Correo Electrónico con Caracteres Latinos</h1>
     <form>
         <input type="text" id="email" placeholder="Ingrese su correo">
+
+        <span id="emailOK"></span>
+        
         <button onclick="validarFormulario()">Validar</button>
         <p id="resultado"></p>
     </form>
