@@ -25,13 +25,14 @@
     </script>
 </head>
 <body>
-    <a href="../index.html">Atrás</a>
-
-    <h1>Hidden</h1>
-    <p>El campo hidden es un campo que no se muestra en el formulario, pero que se envía al servidor cuando se envía el formulario. En este caso, se ha creado un campo hidden que se rellena con la fecha y hora actual al pulsar el botón. Y se envía al servidor.</p>
-    <form name="frm" action="mailto:nobody@punto.es"  method="post">
-        <input type="hidden" name="hddOculto">
-        <input type="button" onclick="funcion_button()" value="Pasar valor a hidden y enviar">
-    </form>
+    <a id="atras" href="../index.html">Atrás</a>
+    <div>
+        <h1>Hidden</h1>
+        <p>Hidden es un tipo de input que no se muestra en el formulario, pero que sirev para enviar datos cuando se manda el formulario. <br> En este caso, se ha creado un campo hidden que se rellena con la fecha y hora actual al pulsar el botón y envía un correo.</p>
+        <form name="frm" action="mailto:nobody@punto.es"  method="post">
+            <input type="hidden" name="hddOculto">
+            <input type="button" onclick="funcion_button()" value="Pasar valor a hidden y enviar">
+        </form>
+    </div>
 </body>
 </html>
