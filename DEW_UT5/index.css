@@ -1,0 +1,36 @@
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 150px;
+    background-color: #4CAF50;
+}
+
+p
+{
+    margin: 10px 70px 10px 75px;
+    padding: 10px;
+}
+
+a
+{
+    margin: 10px 0px 0px 0px;
+    padding: 10px 300px 0px 300px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color:  white;
+}
+
+footer
+{
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+}
