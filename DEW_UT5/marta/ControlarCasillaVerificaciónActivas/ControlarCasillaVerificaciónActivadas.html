@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlar número de casillas de verificación activadas</title>
+    <link rel="stylesheet" href="Styles.css">
+    <script type="text/javascript">
+        // Configuración del número mínimo y máximo de casillas activadas
+        const maximoActivadas = 3;
+        const minimoActivadas = 1;
+
+        // Función para contar las casillas activadas
+        function contarActivadas(casillaActual) {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const totalActivadas = Array.from(checkboxes).filter(cb => cb.checked).length;
+
+            const alerta = document.querySelector('.alerta');
+
+            if (totalActivadas > maximoActivadas) {
+                casillaActual.checked = false;
+                alerta.textContent = `No puede activar más de ${maximoActivadas} casillas de verificación.`;
+                alerta.style.display = 'block';
+            } else if (totalActivadas < minimoActivadas) {
+                casillaActual.checked = true;
+                alerta.textContent = `Debe activar al menos ${minimoActivadas} casilla${minimoActivadas > 1 ? 's' : ''} de verificación.`;
+                alerta.style.display = 'block';
+            } else {
+                alerta.style.display = 'none';
+            }
+        }
+
+        // Función para reiniciar la cuenta de casillas activadas
+        function reinicializarCuenta() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(cb => (cb.checked = false));
+            document.querySelector('.alerta').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="alerta"></div>
+    <form onReset="reinicializarCuenta()">
+        <label><input type="checkbox" name="Social" checked onClick="contarActivadas(this)"> Agorafobia (Miedo a los espacios abiertos)</label>
+        <label><input type="checkbox" name="Hombre" onClick="contarActivadas(this)"> Antropofobia (Miedo al hombre)</label>
+        <label><input type="checkbox" name="Olor" onClick="contarActivadas(this)"> Bromidrosifobia (Miedo al mal olor corporal)</label>
+        <label><input type="checkbox" name="Ridiculo" onClick="contarActivadas(this)"> Catagelofobia (Miedo al ridículo)</label>
+        <label><input type="checkbox" name="Enclaustrar" onClick="contarActivadas(this)"> Claustrofobia (Miedo a los espacios cerrados)</label>
+        <label><input type="checkbox" name="Multitud" onClick="contarActivadas(this)"> Demofobia (Miedo a las multitudes)</label>
+        <label><input type="checkbox" name="Libertad" onClick="contarActivadas(this)"> Eleuterofobia (Miedo a la libertad)</label>
+        <label><input type="checkbox" name="Soledad" onClick="contarActivadas(this)"> Eremofobia (Miedo a la soledad)</label>
+        <label><input type="checkbox" name="Trabajo" onClick="contarActivadas(this)"> Ergasiofobia (Miedo al trabajo)</label>
+        <label><input type="checkbox" name="Amor" onClick="contarActivadas(this)"> Erotophobia (Miedo al acto sexual)</label>
+        <label><input type="checkbox" name="Hablar" onClick="contarActivadas(this)"> Halofobia (Miedo a hablar)</label>
+        <label><input type="checkbox" name="Todo" onClick="contarActivadas(this)"> Pantofobia (Miedo a todo)</label>
+        <label><input type="checkbox" name="Extranjeros" onClick="contarActivadas(this)"> Xenofobia (Miedo a los extranjeros)</label>
+        <p><input type="reset" value="Reiniciar"></p>
+    </form>
+</body>
+</html>

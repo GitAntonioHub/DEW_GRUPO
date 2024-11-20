@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desactivación de campos de formulario</title>
+    <link rel="stylesheet" href="Styles.css">
+    <script type="text/javascript">
+        function marcar_y_activar(formulario_actual) {
+            // Verificar si la casilla de verificación está marcada
+            const controles_activados = formulario_actual.control_activado.checked;
+
+            // Si la casilla no está activada, mover el foco a la casilla de verificación
+            if (!controles_activados) {
+                formulario_actual.control_activado.focus();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkbox = document.querySelector('input[name="control_activado"]');
+            const textos = document.querySelectorAll('input[type="text"]');
+
+            // Configurar el estado inicial de los cuadros de texto
+            textos.forEach(texto => texto.disabled = true);
+
+            // Agregar un evento para activar/desactivar los cuadros de texto
+            checkbox.addEventListener('change', function () {
+                textos.forEach(texto => {
+                    texto.disabled = !checkbox.checked;
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label>
+            <input type="checkbox" name="control_activado">
+            Active esta casilla de verificación para activar los siguientes cuadros de texto
+        </label>
+        <input type="text" onFocus="marcar_y_activar(this.form)">
+        <input type="text" onFocus="marcar_y_activar(this.form)">
+    </form>
+</body>
+</html>
