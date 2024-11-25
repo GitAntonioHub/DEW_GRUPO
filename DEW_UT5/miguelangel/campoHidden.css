@@ -23,7 +23,18 @@ p
     border-radius:8px;
 }
 
-a, input
+a
+{
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+}
+
+input
 {
     text-decoration: none;
     margin: 10px 10px 0px 10px;
@@ -32,12 +43,4 @@ a, input
     background-color: #4CAF50;
     border: none;
     border-radius: 8px;
-}
-
-a
-{
-    text-align: center;
-    justify-content: center;
-    justify-items: center;
-    margin-top: 125px;
 }
