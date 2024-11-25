@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-div
+#container
 {
     display: flex;
     flex-direction: column;
@@ -23,15 +23,19 @@ p
     border-radius:8px;
 }
 
-a
+div#atras
 {
     margin-top: 30px;
-    text-decoration: none;
+}
+
+div#atras>a
+{
     padding: 10px 5px 10px 5px;
-    color: white;
+    text-decoration: none;
     background-color: #4CAF50;
-    border: none;
     border-radius: 8px;
+    border: none;
+    color: white;
 }
 
 input
