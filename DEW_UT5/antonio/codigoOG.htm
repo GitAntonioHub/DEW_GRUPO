@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Validaciones alfab�ticas</title>
+	<script language="javascript">
+	function es_minuscula(car)
+      {
+      var MINUSCULAS="abcdefghijklmnnopqrstuvwxyz������";
+      return MINUSCULAS.indexOf(car) >= 0;
+      }
+
+    function es_mayuscula(car)
+      {
+      var MAYUSCULAS="ABCDEFGHIJKLMNNOPQRSTUVWXYZ������";
+      return MAYUSCULAS.indexOf(car)>=0;
+      }
+
+    function es_letra(car) 
+	  {
+      return es_minuscula(car) || es_mayuscula(car);
+      }
+
+	function es_numero(car)
+      {
+      var NUMEROS="0123456789";
+      return NUMEROS.indexOf(car) >=0;
+      }
+
+	function es_signo(car)
+      {
+      var SIGNOS="+-";
+      return SIGNOS.indexOf(car) >=0;
+      }
+	  
+    function crear_error()
+      { 
+	  this.mensaje="";
+      this.posicion=0;
+      this.rellenar=rellenar;
+      }
+
+    function rellenar(mensaje,posicion) 
+      {
+      this.mensaje=mensaje;
+      this.posicion=posicion;
+      return false;
+      }
+	  
+	var error=new crear_error();  
+	
+    function comprobar_palabra_en_minusculas(contenido,error) 
+      {
+      if(contenido.length ==0)
+       return error.rellenar("Campo vacio no contiene ningun valor",1); 
+	  for(var i=0;i < contenido.length; i++)
+        if(!es_minuscula(contenido.charAt(i)))
+          return error.rellenar("Falta caracter alfab�tico en min�sculas",i+1); 
+      return true
+      }
+
+    function comprobar_palabra_en_mayusculas(contenido,error)
+      {
+      if (contenido.length ==0)
+       return error.rellenar("Campo vacio no contiene ningun valor",1); 
+	  for(var i=0;i < contenido.length; i++)
+        if (!es_mayuscula(contenido.charAt(i)))
+          return error.rellenar("Falta caracter alfab�tico en may�sculas",i+1); 
+      return true
+      }
+
+    function comprobar_palabra(contenido,error) 
+      {
+      if(contenido.length==0)
+       return error.rellenar("Campo vacio no contiene ningun valor",1); 
+	  for(var i=0;i < contenido.length; i++)
+	    if(!es_letra(contenido.charAt(i)))
+          return error.rellenar("Falta caracter alfab�tico",i+1); 
+      return true
+      }
+	 
+    function validar_txtCadena1(elemento)
+     {
+	 try
+	   {
+	   
+       if (!comprobar_palabra_en_minusculas(elemento.value,error))
+         throw new Error("ERROR: "+error.mensaje+" en la posici�n "+error.posicion);
+	   }
+     catch(ex)
+       {
+	   alert(ex.message);
+	   }	
+     }
+	  
+    function validar_txtCadena2(elemento)
+     {
+	 try
+	   {
+       if (!comprobar_palabra_en_mayusculas(elemento.value,error))
+         throw new Error("ERROR: "+error.mensaje+" en la posici�n "+error.posicion);
+	   }
+     catch(ex)
+       {
+	   alert(ex.message);
+	   }	
+     }
+
+    function validar_txtCadena3(elemento)
+     {
+	 try
+	   {
+       if (!comprobar_palabra(elemento.value,error))
+         throw new Error("ERROR: "+error.mensaje+" en la posici�n "+error.posicion);
+	   }
+     catch(ex)
+       {
+	   alert(ex.message);
+	   }	
+     }
+	 
+	</script>
+</head>
+
+<body>
+<h2 >Prueba de validaciones alfab�ticas</h2>
+Introduzca una cadena de caracteres <input type="text" name="txtCadena" size="20">
+<br>
+<input type="button" value="�son todos los caracteres min�scula?" onClick="validar_txtCadena1(txtCadena)">
+<br>
+<input type="button" value="�son todos los caracteres may�scula?" onClick="validar_txtCadena2(txtCadena)">
+<br>
+<input type="button" value="�son todos los caracteres alfab�ticos?" onClick="validar_txtCadena3(txtCadena)">
+</body>
+</html>
