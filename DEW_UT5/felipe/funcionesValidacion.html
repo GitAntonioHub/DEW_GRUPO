@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <title>FuncionesValidar</title>
+    <script>
+        function checkCharacter(type) {
+            const char = document.getElementById("character").value;
+            const resultDiv = document.getElementById("result");
+
+            if (char.length === 0) {
+                resultDiv.textContent = "Por favor, introduce un carácter.";
+                resultDiv.style.color = "blue";
+                return;
+            }
+
+            let result;
+
+            switch (type) {
+                case 'lowercase':
+                    result = char === char.toLowerCase() && char !== char.toUpperCase();
+                    resultDiv.textContent = result ? "✅ Es minúscula." : "❌ No es minúscula.";
+                    resultDiv.style.color = result ? "green" : "red";
+                    break;
+
+                case 'uppercase':
+                    result = char === char.toUpperCase() && char !== char.toLowerCase();
+                    resultDiv.textContent = result ? "✅ Es mayúscula." : "❌ No es mayúscula.";
+                    resultDiv.style.color = result ? "green" : "red";
+                    break;
+
+                case 'letter':
+                    result = /^[a-zA-Z]$/.test(char);
+                    resultDiv.textContent = result ? "✅ Es una letra." : "❌ No es una letra.";
+                    resultDiv.style.color = result ? "green" : "red";
+                    break;
+
+                case 'number':
+                    result = /^[0-9]$/.test(char);
+                    resultDiv.textContent = result ? "✅ Es un número." : "❌ No es un número.";
+                    resultDiv.style.color = result ? "green" : "red";
+                    break;
+
+                case 'symbol':
+                    result = /^[^a-zA-Z0-9]$/.test(char);
+                    resultDiv.textContent = result ? "✅ Es un signo." : "❌ No es un signo.";
+                    resultDiv.style.color = result ? "green" : "red";
+                    break;
+
+                default:
+                    resultDiv.textContent = "Opción no válida.";
+                    break;
+            }
+        }
+    </script>
 </head>
 <body>
-    <a href="../index.html">Atrás</a>
+    <a class="vuelta" href="../index.html">Atrás</a>
+    <h1>Funciones Validación</h1>
+    <p>Introduce un carácter y selecciona qué quieres comprobar:</p>
+    <input type="text" id="character" maxlength="1">
+    <div>
+        <button onclick="checkCharacter('lowercase')">¿Es minúscula?</button>
+        <button onclick="checkCharacter('uppercase')">¿Es mayúscula?</button>
+        <button onclick="checkCharacter('letter')">¿Es una letra?</button>
+        <button onclick="checkCharacter('number')">¿Es un número?</button>
+        <button onclick="checkCharacter('symbol')">¿Es un signo?</button>
+    </div>
+    <div id="result"></div>
 </body>
 </html>

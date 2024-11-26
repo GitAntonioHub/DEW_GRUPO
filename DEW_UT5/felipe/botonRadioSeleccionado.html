@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <title>BotonRadio</title>
+    <script>
+        document.getElementById("showSelected").addEventListener("click", function () {
+            // Obtener el formulario
+            const form = document.getElementById("searchForm");
+
+            // Obtener el botón de radio seleccionado
+            const selectedRadio = form.querySelector('input[name="searchEngine"]:checked');
+
+            // Actualizar el campo de texto con el valor seleccionado
+            const resultField = document.getElementById("resultField");
+            if (selectedRadio) {
+                resultField.value = selectedRadio.value; // Mostrar solo el valor seleccionado
+            } else {
+                resultField.value = ""; // Vaciar si no hay selección
+            }
+        });
+    </script>
 </head>
 <body>
-    <a href="../index.html">Atrás</a>
+    <a class="vuelta2" href="../index.html">Atrás</a>
+    <h1>Selecciona tu Buscador Favorito</h1>
+    <form id="searchForm">
+        <label>
+            <input type="radio" name="searchEngine" value="Altavista" checked> Altavista
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="searchEngine" value="Google"> Google
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="searchEngine" value="Lycos"> Lycos
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="searchEngine" value="Yahoo"> Yahoo
+        </label>
+        <br>
+        <button type="button" id="showSelected">Mostrar Valor Seleccionado</button>
+        <input type="text" id="resultField" placeholder="Aquí se mostrará el valor" readonly>
+    </form>
 </body>
 </html>
