@@ -8,23 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
     <title>BotonRadio</title>
-    <script>
-        document.getElementById("showSelected").addEventListener("click", function () {
-            // Obtener el formulario
-            const form = document.getElementById("searchForm");
-
-            // Obtener el botón de radio seleccionado
-            const selectedRadio = form.querySelector('input[name="searchEngine"]:checked');
-
-            // Actualizar el campo de texto con el valor seleccionado
-            const resultField = document.getElementById("resultField");
-            if (selectedRadio) {
-                resultField.value = selectedRadio.value; // Mostrar solo el valor seleccionado
-            } else {
-                resultField.value = ""; // Vaciar si no hay selección
-            }
-        });
-    </script>
 </head>
 <body>
     <a class="vuelta2" href="../index.html">Atrás</a>
@@ -49,5 +32,22 @@
         <button type="button" id="showSelected">Mostrar Valor Seleccionado</button>
         <input type="text" id="resultField" placeholder="Aquí se mostrará el valor" readonly>
     </form>
+    <script>
+        document.getElementById("showSelected").addEventListener("click", function () {
+            // Obtener el formulario
+            const form = document.getElementById("searchForm");
+
+            // Obtener el botón de radio seleccionado
+            const selectedRadio = form.querySelector('input[name="searchEngine"]:checked');
+
+            // Actualizar el campo de texto con el valor seleccionado
+            const resultField = document.getElementById("resultField");
+            if (selectedRadio) {
+                resultField.value = selectedRadio.value; // Mostrar solo el valor seleccionado
+            } else {
+                resultField.value = ""; // Vaciar si no hay selección
+            }
+        });
+    </script>
 </body>
 </html>
