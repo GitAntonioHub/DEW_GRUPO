@@ -15,7 +15,7 @@
                 formulario_actual.control_activado.focus();
             }
         }
-
+        // Este evento se asegura que todo el codigo se ejecute solo despues de que todo el html esté completamente cargado
         document.addEventListener('DOMContentLoaded', function () {
             const checkbox = document.querySelector('input[name="control_activado"]');
             const textos = document.querySelectorAll('input[type="text"]');
