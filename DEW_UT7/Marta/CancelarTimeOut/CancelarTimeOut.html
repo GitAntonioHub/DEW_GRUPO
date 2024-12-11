@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout y clearTimeout</title>
+    <link rel="stylesheet" href="Styles.css">
+    <script type="text/javascript">
+        // Visualizar el mensaje en la barra de estado (obsoleto, pero mantendremos la funcionalidad original)
+        window.onload = function () {
+            window.status = "I.E.S. El Rincón";
+        };
+
+        // Fijar la demora
+        var idTemporizador = setTimeout(pararEstado, 5000);
+
+        // Función llamada cuando el tiempo de demora transcurre
+        function pararEstado() {
+            window.status = "";
+            alert("El temporizador ha finalizado.");
+        }
+
+        // Ejecutar la función cuando el usuario haga clic en cualquier parte de la página
+        document.onclick = function cancelarTemporizador() {
+            clearTimeout(idTemporizador);
+            alert("El temporizador timeout ha sido cancelado.");
+            document.onclick = null; // Desactivar el evento onclick
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <b>Haga clic dentro de la página antes de 5 segundos para cancelar el temporizador</b>
+        <br>
+        <button onclick="alert('Intenta hacer clic en cualquier parte de la página')">¿Qué pasa si no hago clic?</button>
+    </div>
+</body>
+</html>

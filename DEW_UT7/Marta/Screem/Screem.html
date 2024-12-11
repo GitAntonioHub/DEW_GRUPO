@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las propiedades del objeto Screen</title>
+    <link rel="stylesheet" href="Styles.css">
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Propiedades de la Pantalla</h1>
+        <script type="text/javascript">
+            document.write("<b>La anchura máxima es " + screen.width + " píxeles.</b><br>");
+            document.write("<b>La anchura disponible es " + screen.availWidth + " píxeles.</b><br>");
+            document.write("<p>");
+            document.write("<b>La altura máxima es " + screen.height + " píxeles.</b><br>");
+            document.write("<b>La altura disponible es " + screen.availHeight + " píxeles.</b><br>");
+            document.write("<p>");
+            document.write("<b>La profundidad de color del píxel es de " + screen.pixelDepth + " bits por píxel.</b><br>");
+            document.write("<b>La profundidad de color es de " + screen.colorDepth + " bits por píxel.</b><br>");
+
+            document.write("<p><b>Resolución detectada:</b> ");
+            if (screen.width === 640) {
+                document.write("640 x 480</p>");
+            } else if (screen.width <= 800) {
+                document.write("800 x 600</p>");
+            } else if (screen.width <= 848) {
+                document.write("848 x 480</p>");
+            } else if (screen.width <= 1024) {
+                document.write("1024 x 768</p>");
+            } else if (screen.width <= 1152) {
+                document.write("1152 x 864</p>");
+            } else if (screen.width <= 1200) {
+                document.write("1200 x 800</p>");
+            } else {
+                document.write("1600 x 1200 o mayor</p>");
+            }
+        </script>
+    </div>
+</body>
+</html>
