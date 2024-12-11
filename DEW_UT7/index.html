@@ -4,15 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice Principal</title>
-    <link rel="stylesheet" href="Styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        a {
+            display: block;
+            margin: 10px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        a.marta {
+            background-color: #007bff;
+            color: white;
+        }
+        a.marta:hover {
+            background-color: #0056b3;
+        }
+        a.miguel {
+            background-color: #28a745;
+            color: white;
+        }
+        a.miguel:hover {
+            background-color: #218838;
+        }
+        a.antonio {
+            background-color: #ffc107;
+            color: black;
+        }
+        a.antonio:hover {
+            background-color: #e0a800;
+        }
+        a.felipe {
+            background-color: #dc3545;
+            color: white;
+        }
+        a.felipe:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Índice Principal</h1>
-        <a href="./Marta/index.html" class="marta">Marta</a>
-        <a href="./MiguelAngel/index.html" class="miguel">Miguel Ángel</a>
-        <a href="./Antonio/index.html" class="antonio">Antonio</a>
-        <a href="./Felipe/index.html" class="felipe">Felipe</a>
+        <a href="Marta/index.html" class="marta">Marta</a>
+        <a href="MiguelAngel/index.html" class="miguel">Miguel Ángel</a>
+        <a href="Antonio/index.html" class="antonio">Antonio</a>
+        <a href="Felipe/index.html" class="felipe">Felipe</a>
     </div>
 </body>
 </html>
