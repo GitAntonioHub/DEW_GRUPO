@@ -5,17 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensaje móvil</title>
     <link rel="stylesheet" href="Styles.css">
-    
 </head>
 <body>
+
     <!-- Contenedor del mensaje móvil -->
     <div class="scroll-container">
-        <div class="scroll-text">Instituto de E.S. El Rincón · Aprender es el camino · Innovación y educación</div>
+        <div class="scroll-text" id="mensaje-texto">Instituto de E.S. El Rincón · Aprender es el camino · Innovación y educación</div>
     </div>
 
     <!-- Contenedor del enlace -->
     <div class="link-container">
         <a href="../index.html">Volver a la página principal</a>
     </div>
+
+    <script>
+        // Variables del mensaje
+        const mensajeTexto = document.getElementById('mensaje-texto');
+        const mensaje = mensajeTexto.innerText;
+
+        // Configuración de la animación
+        let mensajeLargo = mensaje;
+        let tiempoDesplazamiento = 25;  // Tiempo en milisegundos por desplazamiento
+        let distancia = 0;
+
+        // Rellenar el mensaje con espacios al inicio
+        while (distancia < window.innerWidth) {
+            mensajeLargo += '   ';  // Espacios adicionales para que sea más largo
+            distancia += 100; // Estimación del tamaño en píxeles
+        }
+
+        // Actualizar el texto del mensaje con el mensaje largo
+        mensajeTexto.innerText = mensajeLargo;
+
+        // Función para desplazar el mensaje
+        function moverMensaje() {
+            // Cambiar la posición del mensaje hacia la izquierda
+            let actualPosicion = parseInt(mensajeTexto.style.transform.replace('translateX(', '').replace('px)', '') || 0);
+            mensajeTexto.style.transform = `translateX(${actualPosicion - 1}px)`;
+
+            // Si el mensaje ha salido de la pantalla, reiniciar la posición
+            if (actualPosicion <= -mensajeTexto.offsetWidth) {
+                mensajeTexto.style.transform = `translateX(${window.innerWidth}px)`;
+            }
+        }
+
+        // Iniciar el movimiento
+        setInterval(moverMensaje, tiempoDesplazamiento);
+    </script>
 </body>
 </html>
