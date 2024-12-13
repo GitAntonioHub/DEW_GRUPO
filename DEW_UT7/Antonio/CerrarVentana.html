@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cerrando ventanas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    let nueva_ventana;
+
+    function abrir_ventana() {
+      // Abre una ventana emergente con Opener2.html (puedes llamarlo .html o .htm)
+      nueva_ventana = window.open("Opener2.html", "");
+    }
+
+    function cerrar_ventana() {
+      // Si no se ha abierto ninguna ventana, o la ventana ya está cerrada, mostramos un mensaje
+      if (!nueva_ventana) {
+        alert("La ventana nunca ha sido abierta.");
+      } else if (nueva_ventana.closed) {
+        alert("La ventana ya está cerrada.");
+      } else {
+        nueva_ventana.close();
+      }
+    }
+  </script>
+</head>
+<body>
+    <button class="volver" onclick="window.location.href='index.html'">Volver</button>
+    <div class="container">
+  <h1>Cerrar Ventanas</h1>
+  
+  <!-- Enlace para abrir la ventana -->
+  <p>
+    <a href="#" onclick="abrir_ventana()">Abrir Opener2.html</a>
+  </p>
+  
+  <!-- Enlace para cerrar la ventana -->
+  <p>
+    <a href="#" onclick="cerrar_ventana()">Cerrar Opener2.html</a>
+  </p></div>
+</body>
+</html>

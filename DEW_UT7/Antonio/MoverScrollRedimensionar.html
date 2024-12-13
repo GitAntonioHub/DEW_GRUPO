@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ventana con características</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    let wVentana = null;
+
+    function AbrirVentana() {
+      // Abrimos una ventana emergente con Ventana.htm
+      wVentana = window.open(
+        "Ventana.html",
+        "Ventana",
+        "menubar=no,resizable=yes,status=yes,width=600,height=300,scrollbars=yes,left=150"
+      );
+    }
+  </script>
+</head>
+
+<body>
+    <button class="volver" onclick="window.location.href='index.html'">Volver</button>
+  <h1>Ventana con características</h1>
+
+  <div class="ejemplo" name="MiDiv">
+    <p>Esta es la ventana principal</p>
+    
+    <!-- Botón para abrir la ventana -->
+    <input type="button" class="Boton" value="ABRIR VENTANA" onclick="AbrirVentana()" />
+
+    <!-- Botones de Mover, Redimensionar y Scroll -->
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="MOVEBY"
+        onclick="wVentana.moveBy(50,50); wVentana.status='moveBy(50,50)';"
+      />
+    </p>
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="MOVETO"
+        onclick="wVentana.moveTo(400,100); wVentana.status='moveTo(400,100)';"
+      />
+    </p>
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="RESIZEBY"
+        onclick="wVentana.resizeBy(50,-50); wVentana.status='resizeBy(50,-50)';"
+      />
+    </p>
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="RESIZETO"
+        onclick="wVentana.resizeTo(500,300); wVentana.status='resizeTo(500,300)';"
+      />
+    </p>
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="SCROLL"
+        onclick="wVentana.scroll(0,200); wVentana.status='scroll(0,200)';"
+      />
+    </p>
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="SCROLLBY"
+        onclick="wVentana.scrollBy(0,50); wVentana.status='scrollBy(0,50)';"
+      />
+    </p>
+    <p>
+      <input
+        type="button"
+        class="Boton"
+        value="SCROLLTO"
+        onclick="wVentana.scrollTo(100,50); wVentana.status='scrollTo(100,50)';"
+      />
+    </p>
+  </div>
+</body>
+</html>

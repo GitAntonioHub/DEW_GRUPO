@@ -1,0 +1,81 @@
+/* Reinicio básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo con gradiente para dar un estilo fresco */
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #3A1C71, #D76D77, #FFAF7B);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Botón "Volver" arriba a la izquierda */
+button.volver {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #ffd700;
+    color: #000;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button.volver:hover {
+    background: #ffe135;
+}
+
+/* Contenedor con fondo semitransparente */
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos */
+h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Párrafos */
+p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+/* Botones y enlaces dentro del contenedor */
+a, button:not(.volver) {
+    background: #ffd700;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+a:hover, button:not(.volver):hover {
+    background: #ffe135;
+}

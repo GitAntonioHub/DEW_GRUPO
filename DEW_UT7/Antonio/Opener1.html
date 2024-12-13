@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ventana Madre (Opener1)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    let ventanaHija;
+
+    function abrirVentanaHija() {
+      // Abrimos la ventana hija
+      ventanaHija = window.open(
+        'Opener2.html', // Ruta a la ventana hija
+        'ventanaHija', // Nombre único para la ventana
+      );
+
+      if (!ventanaHija) {
+        alert("No se pudo abrir la ventana hija. Verifica la configuración del navegador.");
+      } else {
+        console.log("Ventana hija abierta correctamente:", ventanaHija);
+      }
+    }
+  </script>
+</head>
+<body>
+  <button class="volver" onclick="window.location.href='index.html'">Volver</button>
+
+  <h1>Ventana Madre</h1>
+  <p>
+    <button onclick="abrirVentanaHija()">Abrir Ventana Hija</button>
+  </p>
+</body>
+</html>
