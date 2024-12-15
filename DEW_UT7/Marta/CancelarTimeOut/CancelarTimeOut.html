@@ -6,25 +6,37 @@
     <title>setTimeout y clearTimeout</title>
     <link rel="stylesheet" href="Styles.css">
     <script type="text/javascript">
-        // Visualizar el mensaje en la barra de estado (obsoleto, pero mantendremos la funcionalidad original)
         window.onload = function () {
-            window.status = "I.E.S. El Rincón";
-        };
+            console.log("Página cargada."); // Para verificar que el evento onload se ejecuta correctamente.
 
-        // Fijar la demora
-        var idTemporizador = setTimeout(pararEstado, 5000);
+            // Seleccionar el elemento donde se mostrará el mensaje de estado
+            const statusElement = document.getElementById("statusMessage");
+            if (!statusElement) {
+                console.error("No se encontró el elemento con ID 'statusMessage'.");
+                return;
+            }
 
-        // Función llamada cuando el tiempo de demora transcurre
-        function pararEstado() {
-            window.status = "";
-            alert("El temporizador ha finalizado.");
-        }
+            // Mostrar el mensaje inicial
+            statusElement.textContent = "I.E.S. El Rincón";
 
-        // Ejecutar la función cuando el usuario haga clic en cualquier parte de la página
-        document.onclick = function cancelarTemporizador() {
-            clearTimeout(idTemporizador);
-            alert("El temporizador timeout ha sido cancelado.");
-            document.onclick = null; // Desactivar el evento onclick
+            // Iniciar el temporizador
+            var idTemporizador = setTimeout(pararEstado, 5000);
+
+            // Función llamada cuando el tiempo de demora transcurre
+            function pararEstado() {
+                statusElement.textContent = ""; // Limpiar el mensaje
+                alert("El temporizador ha finalizado.");
+                console.log("El temporizador ha finalizado.");
+            }
+
+            // Cancelar el temporizador al hacer clic en cualquier parte
+            document.onclick = function cancelarTemporizador() {
+                clearTimeout(idTemporizador); // Cancelar el temporizador
+                alert("El temporizador timeout ha sido cancelado.");
+                console.log("El temporizador timeout ha sido cancelado.");
+                statusElement.textContent = "El temporizador fue cancelado.";
+                document.onclick = null; // Desactivar el evento onclick
+            };
         };
     </script>
 </head>
@@ -33,12 +45,10 @@
         <b>Haga clic dentro de la página antes de 5 segundos para cancelar el temporizador</b>
         <br>
         <button onclick="alert('Intenta hacer clic en cualquier parte de la página')">¿Qué pasa si no hago clic?</button>
-
         <br>
+        <p id="statusMessage" class="status-message"></p> <!-- Aquí se mostrará el mensaje -->
         <br>
         <a href="../index.html">Volver a la página principal</a>
     </div>
-
-    
 </body>
 </html>
