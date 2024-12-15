@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir PopUp con Características</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Características de la Ventana</h1>
+        <a class="azul" onclick="abrirVentana('width=800,height=600')">Ventana 800x600</a>
+        <a class="verde" onclick="abrirVentana('width=1024,height=768')">Ventana 1024x768</a=>
+        <a class="amarillo" onclick="abrirVentana('width=800,height=600,resizable=no')">Ventana no redimensionable</a> <!-- Es ignorado por los navegadores modernos -->
+        <a class="rojo" onclick="abrirVentana('width=800,height=600,scrollbars=no')">Ventana con Scrollbars</a>
+        <a class="morado" onclick="abrirVentana('width=800,height=600,status=yes')">Ventana con Barra de Estado</a>
+        <a class="naranja" onclick="abrirVentana('width=800,height=600,toolbar=yes')">Ventana con Barra de Herramientas</a>
+        <a class="rosa" onclick="abrirVentana('width=800,height=600,menubar=yes')">Ventana con Barra de Menú</a>
+        <a class="gris" onclick="abrirVentana('width=800,height=600,location=yes')">Ventana con Barra de Ubicación</a>
+        <a class="negro" onclick="abrirVentana('width=800,height=600,directories=yes')">Ventana con Barra de Directorios</a> <!-- Obsoleto y no soportado -->
+        <a class="blanco" onclick="abrirVentanaCompleta()">Ventana Pantalla Completa</a> <!-- No soportado por motivos de seguridad y usabilidad-->
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>
