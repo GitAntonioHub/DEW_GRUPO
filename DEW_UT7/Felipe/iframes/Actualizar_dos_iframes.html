@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script language="javascript">
+      // Actualizar dos iframes al mismo tiempo.
+      function twoframes() {
+        document.getElementById("frame1").src = "appnameYappVersion.htm";
+        document.getElementById("frame2").src = "Screen.htm";
+      }
+      function cambiar() {
+        document.getElementById("frame1").src = "appnameYappVersion.htm";
+        document.getElementById("frame2").src = "Screen.htm";
+      }
+    </script>
+  </head>
+
+  <body>
+    <iframe src="Husmeador.htm" name="frame1" id="frame1"></iframe>
+    <iframe src="userAgent.htm" name="frame2" id="frame2"></iframe>
+    <br /><br /><br /><br />
+    <form>
+      <input type="button" onclick="twoframes()" value="Cambiar la URL de los dos iframes"/>
+      <input type="button" onClick="cambiar()" value="Otra forma de intercambiar"/>
+    </form>
+
+    <ol>
+      <li>
+        Se muestran en dos iframes dos paginas: "husmeador.hmtl" en el iframe1 y
+        "userAgent.html" en el iframe2
+      </li>
+      <li>
+        Mediante el botón se llama a una función que intercambiará las páginas
+        que se visualizan dentro de los iframes
+      </li>
+      <li>
+        El ejemplo mostrado se hace uso de la propiedad - all - para referirse a
+        los elementos.
+      </li>
+      <li>
+        La propiedad all actualmente está desfasada por lo que se recomienda
+        usar getElementById
+      </li>
+    </ol>
+  </body>
+</html>

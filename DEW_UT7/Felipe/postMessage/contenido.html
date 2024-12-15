@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostMessage Ejemplo - Iframe</title>
+</head>
+<body>
+    <h1>Iframe</h1>
+    <p>Este iframe puede comunicarse con la página principal usando <code>postMessage</code>.</p>
+    
+    <script>
+        // Escucha mensajes provenientes de la página principal
+        window.addEventListener("message", (event) => {
+            if (event.origin === "http://127.0.0.1:3000") { // Validar el origen del mensaje
+                const data = event.data;
+
+                // Procesar solo mensajes con un tipo específico
+                if (data.type === "fromParent") {
+                    console.log("Mensaje recibido desde la página principal:", data.content);
+
+                    // Responder al mensaje
+                    const respuesta = { 
+                        type: "fromIframe", 
+                        content: "Recibido el mensaje desde página principal." 
+                    };
+                    event.source.postMessage(respuesta, event.origin);
+                }
+            } else {
+                console.warn("Mensaje rechazado de origen no confiable:", event.origin);
+            }
+        });
+    </script>
+</body>
+</html>

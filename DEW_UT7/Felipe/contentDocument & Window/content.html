@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content for Same-Origins</title>
+  </head>
+  <body>
+    <h1>ContentDocument & Window</h1>
+    <p>El siguiente iframe carga un contenido desde "contenido.html".</p>
+    
+    <iframe id="miIframe" src="contenido.html" width="600" height="300" style="border: 1px solid #ccc;"></iframe>
+    
+    <script>
+        const iframe = document.getElementById("miIframe");
+
+        iframe.addEventListener("load", () => {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            const elemento = iframeDoc.querySelector("#elementoDentroDelIframe");
+            console.log(elemento);
+
+            if (elemento) {
+                elemento.style.color = "red"; // Forzar el estilo
+                elemento.textContent += " (modificado desde el documento principal)"; // Añade texto
+            }
+        });
+    </script>
+</body>
+</html>

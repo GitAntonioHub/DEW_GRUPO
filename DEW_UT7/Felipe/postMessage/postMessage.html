@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostMessage Ejemplo - Página Principal</title>
+</head>
+<body>
+    <h1>Página Principal</h1>
+    <p>Este ejemplo demuestra cómo usar <code>postMessage</code> para comunicarse con un iframe.</p>
+    
+    <!-- Iframe -->
+    <iframe id="miIframe" src="contenido.html" width="600" height="300" style="border: 1px solid #ccc;"></iframe>
+    
+    <!-- Botón para enviar mensaje al iframe -->
+    <button id="enviarMensaje">Enviar mensaje al iframe</button>
+
+    <script>
+        // Selecciona el iframe y el botón
+        const iframe = document.getElementById("miIframe");
+        const boton = document.getElementById("enviarMensaje");
+
+        // Envía un mensaje al iframe cuando se hace clic en el botón
+        boton.addEventListener("click", () => {
+            const mensaje = { 
+                type: "fromParent", 
+                content: "Hola desde la página principal!" 
+            };
+            iframe.contentWindow.postMessage(mensaje, "http://127.0.0.1:3000"); // Cambiar "http://localhost" por el origen del iframe
+            console.log("Mensaje enviado al iframe:", mensaje);
+        });
+
+        // Escucha los mensajes provenientes del iframe
+        window.addEventListener("message", (event) => {
+            if (event.origin === "http://127.0.0.1:3000") { // Validar el origen del mensaje
+                const data = event.data;
+
+                // Procesar solo mensajes con un tipo específico
+                if (data.type === "fromIframe") {
+                    console.log("Mensaje recibido desde el iframe:", data.content);
+                }
+            } else {
+                console.warn("Mensaje rechazado de origen no confiable:", event.origin);
+            }
+        });
+    </script>
+</body>
+</html>
