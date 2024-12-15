@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <title>Ventana Hija (Opener2)</title>
   <link rel="stylesheet" href="styles.css" />
+
   <script>
     function AbreYDaFoco() {
-      // Verifica si la ventana madre (opener) existe y no está cerrada
+      // Verificamos si la ventana madre existe y está abierta
       if (window.opener && !window.opener.closed) {
-        // Enfocar la ventana madre
-        window.opener.focus();
         console.log("Se hizo foco en la ventana madre.");
+        window.opener.focus(); // Enfocar la ventana madre
       } else {
-        // La ventana madre no existe o está cerrada
+        console.log("La ventana madre está cerrada o no existe.");
         alert("La ventana madre está cerrada o no existe.");
       }
     }
@@ -21,9 +21,8 @@
       const madreURL = document.getElementById("madreURL");
 
       try {
-        // Mostrar la URL de la ventana madre si está disponible
         if (window.opener && !window.opener.closed) {
-          madreURL.textContent = window.opener.location.href;
+          madreURL.textContent = window.opener.location.href; // Mostrar URL de la madre
         } else {
           madreURL.textContent = "No hay ventana madre detectada o está cerrada.";
         }
@@ -35,13 +34,14 @@
   </script>
 </head>
 <body>
-    <button class="volver" onclick="window.location.href='index.html'">Volver</button>
+  <button class="volver" onclick="window.location.href='index.html'">Volver</button>
+
   <h1>Ventana Hija</h1>
   <p>
     La dirección de la ventana madre es: <span id="madreURL">Cargando...</span>
   </p>
   <p>
-    <button onclick="AbreYDaFoco()">Abrir Ventana Hija</button>
+    <a href="javascript:void(0);" onclick="AbreYDaFoco(); return false;">Ir a la ventana madre</a>
   </p>
 </body>
 </html>
